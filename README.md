@@ -24,7 +24,17 @@ When I was a kid, my dad found a fun way to teach me multiplication tables using
 - AAAU, I want to be able to Update a flashcard.
 
 
-### User Stories - Stretch Goals
+## Getting Started:
+
+
+## Technologies Used:
+
+- React
+- Express
+- Node
+- MongoDB/Mongoose
+
+## Stretch Goals:
 
 - AAAU,  I want to be able to Create a new category.
 - AAAU,  I want to be able to Delete a category.
@@ -33,12 +43,4 @@ When I was a kid, my dad found a fun way to teach me multiplication tables using
 - AAAU, I want to be able to Create a new sub category.
 - AAAU, I want to be able to Delete a sub category.
 - AAAU, I want to be able to Update a sub category.
-
-## Getting Started:
-
-
-## Technologies Used:
-
-
-## Stretch Goals:
 
