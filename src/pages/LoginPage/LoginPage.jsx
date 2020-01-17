@@ -22,7 +22,7 @@ class LoginPage extends Component {
         try {
             await userService.login(this.state);
             // Let <App> know a user has signed up!
-            this.props.handleSignupOrLogin();
+            this.props.handleSignuporLogin();
             // Successfully signed up - show GamePage
             this.props.history.push('/');
         } catch (err) {
