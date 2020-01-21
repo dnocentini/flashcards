@@ -7,8 +7,7 @@ const flashcardSchema = new Schema(
         canswer: String,
         wanswer1: String,
         wanswer2: String,
-        wanswer3: String,
-        required: true  
+        wanswer3: String, 
     },
     { timestamps: true }
 );
