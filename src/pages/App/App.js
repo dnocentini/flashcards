@@ -4,6 +4,7 @@ import HomePage from "../HomePage/HomePage";
 import SignupPage from "../SignupPage/SignupPage";
 import LoginPage from "../LoginPage/LoginPage";
 import userService from "../../utils/userService";
+import * as flashcardAPI from "../../services/flashcards-api";
 
 import "./App.css";
 
@@ -11,9 +12,19 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      user: userService.getUser()
+      user: userService.getUser(),
+      flashcards: []
     };
   }
+
+  handleAddFlashcard = async newFcdData => {
+    const newFcd = await flashcardAPI.create(newFcdData);
+    this.setState(state => ({
+      flashcards: [...state.flashcards, newFcd]
+    }),
+    () => this.props.history.push('/'));
+  }
+
   handlelogout = () => {
     userService.logout();
     this.setState({ user: null });
@@ -22,6 +33,14 @@ class App extends Component {
   handleSignuporLogin = () => {
     this.setState({ user: userService.getUser() });
   };
+
+  /*--- Lifecycle Methods ---*/
+
+  async componentDidMount() {
+    const flashcards = await flashcardAPI.getAll();
+    this.setState({flashcards});
+  }
+
   render() {
     return (
       <div>
