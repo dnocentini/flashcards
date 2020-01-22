@@ -3,11 +3,11 @@ const Schema = mongoose.Schema;
 
 const flashcardSchema = new Schema(
     {
-        question: String,
-        canswer: String,
-        wanswer1: String,
-        wanswer2: String,
-        wanswer3: String, 
+        question: {type: String, required: true},
+        canswer: {type: String, required: true},
+        wanswer1: {type: String, required: true},
+        wanswer2: {type: String, required: true},
+        wanswer3: {type: String, required: true}, 
     },
     { timestamps: true }
 );
