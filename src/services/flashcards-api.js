@@ -5,10 +5,10 @@ export function getAll() {
         .then(res => res.json());
 }
 
-export function create(fcd) {
+export function create(flashcard) {
     return fetch(BASE_URL, {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify(fcd)
+        body: JSON.stringify(flashcard)
     }).then(res => res.json());
 }
