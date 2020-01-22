@@ -5,7 +5,7 @@ import "./NavBar.css";
 const NavBar = props => {
     let nav = props.user ? (
         <div>
-            <Link to="/adm-flashcards" className="NavBar-Link" >
+            <Link to="/adm-flashcard" className="NavBar-Link" >
                 ADM
             </Link>
             &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;

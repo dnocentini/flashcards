@@ -58,7 +58,7 @@ class App extends Component {
           />
           <Route
             exact
-            path="/add-flashcard"
+            path="/adm-flashcard"
             render={() =>
               userService.getUser() ?
                 <>
@@ -69,7 +69,7 @@ class App extends Component {
                   <AddFlashcardPage
                     user={this.state.user}
                     handleAddFlashcard={this.handleAddFlashcard}
-                    flashcards={this.state.appointments}
+                    flashcards={this.state.flashcards}
                   />
                 </>
                 :
