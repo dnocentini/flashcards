@@ -7,6 +7,7 @@ import LoginPage from "../LoginPage/LoginPage";
 import userService from "../../utils/userService";
 import AdmFlashcardPage from "../AdmFlashcardPage/AdmFlashcardPage";
 import FlashcardListPage from "../FlashcardListPage/FlashcardListPage";
+import WelcomePage from "../WelcomePage/WelcomePage";
 import * as flashcardAPI from "../../services/flashcards-api";
 
 import "./App.css";
@@ -59,10 +60,13 @@ class App extends Component {
             exact
             path="/"
             render={() => (
+              <>
               <HomePage
                 user={this.state.user}
                 handlelogout={this.handlelogout}
               />
+              <WelcomePage />
+              </>
             )}
           />
           <Route
