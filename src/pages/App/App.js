@@ -4,7 +4,7 @@ import HomePage from "../HomePage/HomePage";
 import SignupPage from "../SignupPage/SignupPage";
 import LoginPage from "../LoginPage/LoginPage";
 import userService from "../../utils/userService";
-import AddFlashcardPage from "../AddFlashcardPage/AddFlashcardPage"
+import AdmFlashcardPage from "../AdmFlashcardPage/AdmFlashcardPage"
 import * as flashcardAPI from "../../services/flashcards-api";
 
 import "./App.css";
@@ -18,10 +18,10 @@ class App extends Component {
     };
   }
 
-  handleAddFlashcard = async newFcdData => {
-    const newFcd = await flashcardAPI.create(newFcdData);
+  handleAddFlashcard = async newFlashcardData => {
+    const newFlashcard = await flashcardAPI.create(newFlashcardData);
     this.setState(state => ({
-      flashcards: [...state.flashcards, newFcd]
+      flashcards: [...state.flashcards, newFlashcard]
     }),
       () => this.props.history.push('/'));
   }
@@ -66,7 +66,7 @@ class App extends Component {
                     user={this.state.user}
                     handleLogout={this.handleLogout}
                   />
-                  <AddFlashcardPage
+                  <AdmFlashcardPage
                     user={this.state.user}
                     handleAddFlashcard={this.handleAddFlashcard}
                     flashcards={this.state.flashcards}
