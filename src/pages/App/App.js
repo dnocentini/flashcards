@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
+import { withRouter } from 'react-router'
 import HomePage from "../HomePage/HomePage";
 import SignupPage from "../SignupPage/SignupPage";
 import LoginPage from "../LoginPage/LoginPage";
 import userService from "../../utils/userService";
-import AdmFlashcardPage from "../AdmFlashcardPage/AdmFlashcardPage"
+import AdmFlashcardPage from "../AdmFlashcardPage/AdmFlashcardPage";
+import FlashcardListPage from "../FlashcardListPage/FlashcardListPage";
 import * as flashcardAPI from "../../services/flashcards-api";
 
 import "./App.css";
@@ -23,14 +25,14 @@ class App extends Component {
     this.setState(state => ({
       flashcards: [...state.flashcards, newFlashcard]
     }),
-      () => this.props.history.push('/'));
+      () => this.props.history.push('/adm-flashcard'));
   };
 
   handleDeleteFlashcard = async id => {
     await flashcardAPI.deleteOne(id);
     this.setState(state => ({
-      flashcards: state.flashcards.filter(p => p._id !== id)
-    }), () => this.props.history.push('/'));
+      flashcards: state.flashcards.filter(f => f._id !== id)
+    }), () => this.props.history.push('/adm-flashcard'));
   };
 
   handlelogout = () => {
@@ -73,6 +75,10 @@ class App extends Component {
                     user={this.state.user}
                     handleLogout={this.handleLogout}
                   />
+                  <FlashcardListPage
+                    flashcards={this.state.flashcards}
+                    handleDeleteFlashcard={this.handleDeleteFlashcard}
+                  />
                   <AdmFlashcardPage
                     user={this.state.user}
                     handleAddFlashcard={this.handleAddFlashcard}
@@ -108,4 +114,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter (App);
