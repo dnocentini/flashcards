@@ -24,7 +24,14 @@ class App extends Component {
       flashcards: [...state.flashcards, newFlashcard]
     }),
       () => this.props.history.push('/'));
-  }
+  };
+
+  handleDeleteFlashcard = async id => {
+    await flashcardAPI.deleteOne(id);
+    this.setState(state => ({
+      flashcards: state.flashcards.filter(p => p._id !== id)
+    }), () => this.props.history.push('/'));
+  };
 
   handlelogout = () => {
     userService.logout();
