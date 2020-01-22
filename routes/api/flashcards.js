@@ -4,7 +4,7 @@ var flashcardsCtrl = require('../../controllers/flashcards');
 
 router.get('/', flashcardsCtrl.index);
 router.post('/', flashcardsCtrl.create);
-router.delete('/:id', flashcardsCtrl.delete);
+router.delete('/:id', flashcardsCtrl.deleteOne);
 
 
 module.exports = router;
