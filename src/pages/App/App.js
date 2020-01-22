@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import HomePage from "../HomePage/HomePage";
 import SignupPage from "../SignupPage/SignupPage";
 import LoginPage from "../LoginPage/LoginPage";
 import userService from "../../utils/userService";
+import AddFlashcardPage from "../AddFlashcardPage/AddFlashcardPage"
 import * as flashcardAPI from "../../services/flashcards-api";
 
 import "./App.css";
@@ -22,7 +23,7 @@ class App extends Component {
     this.setState(state => ({
       flashcards: [...state.flashcards, newFcd]
     }),
-    () => this.props.history.push('/'));
+      () => this.props.history.push('/'));
   }
 
   handlelogout = () => {
@@ -38,7 +39,7 @@ class App extends Component {
 
   async componentDidMount() {
     const flashcards = await flashcardAPI.getAll();
-    this.setState({flashcards});
+    this.setState({ flashcards });
   }
 
   render() {
@@ -55,6 +56,25 @@ class App extends Component {
               />
             )}
           />
+          <Route
+            exact
+            path="/add-flashcard"
+            render={() =>
+              userService.getUser() ?
+                <>
+                  <HomePage
+                    user={this.state.user}
+                    handleLogout={this.handleLogout}
+                  />
+                  <AddFlashcardPage
+                    user={this.state.user}
+                    handleAddFlashcard={this.handleAddFlashcard}
+                    flashcards={this.state.appointments}
+                  />
+                </>
+                :
+                <Redirect to='/login' />
+            } />
           <Route
             exact
             path="/signup"
