@@ -2,7 +2,8 @@ const Flashcard = require('../models/flashcard');
 
 module.exports = {
     index,
-    create
+    create,
+    deleteOne
 };
 
 async function index(req, res) {
@@ -13,4 +14,9 @@ async function index(req, res) {
 async function create(req, res) {
     const flashcard = await Flashcard.create(req.body);
     res.status(201).json(flashcard);
+};
+
+async function deleteOne(req, res) {
+    const deletedFlashcard = await Flashcard.findByIdAndRemove(req.params.id);
+    res.status(200).json(deletedFlashcard);
 };
