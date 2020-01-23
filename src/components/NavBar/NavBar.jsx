@@ -5,6 +5,10 @@ import "./NavBar.css";
 const NavBar = props => {
     let nav = props.user ? (
         <div>
+            <Link to="/categories" className="NavBar-Link" >
+                CATEGORIES
+            </Link>
+            &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
             <Link to="/adm-flashcard" className="NavBar-Link" >
                 ADM
             </Link>
