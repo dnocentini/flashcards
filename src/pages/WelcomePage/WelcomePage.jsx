@@ -2,10 +2,14 @@ import React from "react";
 
 const WelcomePage = props => {
     return (
-        <div>
-            <h1>Description</h1>
-            <p>Hello</p>
+        <>
+        <header>
+            <h1>Flashcard Game</h1>
+        </header>
+        <div className="welcome">
+            <div className="message">Welcome</div>
         </div>
+        </>
     );
 };
 
