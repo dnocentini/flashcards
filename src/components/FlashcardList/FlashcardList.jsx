@@ -1,10 +1,10 @@
 import React from 'react';
-//import {Link} from 'react-router-dom';
+import "./FlashcardList.css";
 
 function FlashcardList({ flashcard, handleDeleteFlashcard }) {
     return (
         <div>
-            <tr>
+            <tr className="tableTr">
                 <td>{flashcard.question}</td>
                 <td>{flashcard.canswer}</td>
                 <td>{flashcard.wanswer1}</td>
@@ -14,11 +14,11 @@ function FlashcardList({ flashcard, handleDeleteFlashcard }) {
                     <button
                         onClick={() => handleDeleteFlashcard(flashcard._id)}
                     >
-                        X
+                        x
                     </button>
                 </td>
-            </tr>
-        </div>
+            </tr> 
+        </div>  
     );
 }
 
