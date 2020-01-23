@@ -75,7 +75,13 @@ class App extends Component {
             exact
             path="/categories"
             render={() => (
+              <>
+              <HomePage
+                user={this.state.user}
+                handlelogout={this.handlelogout}
+              />
               <CategoriesPage />
+              </>
             )}
           />
           <Route
