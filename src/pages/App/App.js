@@ -8,9 +8,11 @@ import userService from "../../utils/userService";
 import AdmFlashcardPage from "../AdmFlashcardPage/AdmFlashcardPage";
 import FlashcardListPage from "../FlashcardListPage/FlashcardListPage";
 import WelcomePage from "../WelcomePage/WelcomePage";
+import CategoriesPage from "../CategoriesPage/CategoriesPage";
 import * as flashcardAPI from "../../services/flashcards-api";
 
 import "./App.css";
+
 
 class App extends Component {
   constructor() {
@@ -67,6 +69,13 @@ class App extends Component {
               />
               <WelcomePage />
               </>
+            )}
+          />
+          <Route
+            exact
+            path="/categories"
+            render={() => (
+              <CategoriesPage />
             )}
           />
           <Route
