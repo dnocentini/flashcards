@@ -1,6 +1,5 @@
 import React from 'react';
 import FlashcardList from '../../components/FlashcardList/FlashcardList';
-import FlashcardTable from '../../components/FlashcardTable/FlashcardTable';
 import "./FlashcardListPage.css";
 
 function FlashcardListPage(props) {
@@ -11,7 +10,6 @@ function FlashcardListPage(props) {
         </header>
         <div className="adm-flashcards">
             <div className="message container">Admin Flashcards</div>
-                <FlashcardTable />
                 {props.flashcards.map(flashcard =>
                 <FlashcardList
                     flashcard={flashcard}
