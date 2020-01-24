@@ -1,0 +1,10 @@
+.welcome {
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    align-items: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("../../images/room.png");
+}
