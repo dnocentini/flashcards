@@ -1,4 +1,20 @@
 
+.tableFlashcards {
+    margin-right: 40px;
+    border-collapse: collapse;
+    border: 2px solidrgb(211, 14, 14);
+    border-radius: 10px;
+}
+
+.tableHeader {
+background-color: rgb(211, 14, 14);
+}
+
 .tableTr {
-    border: 2px solid red;
+border: 2px solid rgb(211, 14, 14);
+}
+
+.tableTr:hover {
+background-color:rgb(211, 14, 14);
+opacity: 0.6;
 }

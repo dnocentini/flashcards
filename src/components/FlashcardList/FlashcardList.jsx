@@ -1,9 +1,9 @@
 import React from 'react';
 import "./FlashcardList.css";
 
-function FlashcardList({ flashcard, handleDeleteFlashcard }) {
+function FlashcardList({ props, handleDeleteFlashcard }) {
     return (
-        <div>
+        <div className="container">
             <table className="tableFlashcards">
                 <thead>
                     <tr className="tableHeader">
@@ -15,7 +15,8 @@ function FlashcardList({ flashcard, handleDeleteFlashcard }) {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    {props.flashcards.map(flashcard =>
+                    <tr className="tableTr">
                         <td>{flashcard.question}</td>
                         <td>{flashcard.canswer}</td>
                         <td>{flashcard.wanswer1}</td>
@@ -26,9 +27,10 @@ function FlashcardList({ flashcard, handleDeleteFlashcard }) {
                                 onClick={() => handleDeleteFlashcard(flashcard._id)}
                             >
                                 x
-                </button>
+                            </button>
                         </td>
                     </tr>
+                    )}
                 </tbody>
             </table>
         </div>
