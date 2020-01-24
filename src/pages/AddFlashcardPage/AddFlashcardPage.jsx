@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class AdmFlashcardPage extends Component {
+class AddFlashcardPage extends Component {
     state = {
         invalidForm: true,
         formData: {
@@ -30,7 +30,7 @@ class AdmFlashcardPage extends Component {
     render() {
         return (
             <>
-            <h1>Adm Flashcard</h1>
+            <h1>Add Flashcards</h1>
             <form ref={this.formRef} autoComplete="off" onSubmit={this.handleSubmit}>
                 <div className="form-group">
                     <label>Question</label>
@@ -87,7 +87,7 @@ class AdmFlashcardPage extends Component {
                     className="btn"
                     disabled={this.state.invalidForm}
                 >
-                    ADM FLASHCARD
+                    Add Flashcards
                 </button>
             </form>
             </>
@@ -95,4 +95,4 @@ class AdmFlashcardPage extends Component {
     }
 };
 
-export default AdmFlashcardPage;
+export default AddFlashcardPage;

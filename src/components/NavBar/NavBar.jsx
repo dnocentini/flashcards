@@ -10,7 +10,7 @@ const NavBar = props => {
             </Link>
             &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
             <Link to="/adm-flashcard" className="NavBar-Link" >
-                ADM
+                ADMIN
             </Link>
             &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
             <Link to="" className="NavBar-link" onClick={props.handlelogout}>

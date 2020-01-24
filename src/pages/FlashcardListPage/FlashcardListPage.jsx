@@ -10,15 +10,15 @@ function FlashcardListPage(props) {
             <h1>Flashcard Game</h1>
         </header>
         <div className="adm-flashcards">
-            <div className="message container">ADM Flashcards</div>
-            {props.flashcards.map(flashcard =>
+            <div className="message container">Admin Flashcards</div>
+                <FlashcardTable />
+                {props.flashcards.map(flashcard =>
                 <FlashcardList
                     flashcard={flashcard}
                     handleDeleteFlashcard={props.handleDeleteFlashcard}
                     key={flashcard._id}
                 />
-            )}
-                <FlashcardTable />
+                )}     
         </div>
         </>
     );

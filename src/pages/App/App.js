@@ -5,7 +5,7 @@ import HomePage from "../HomePage/HomePage";
 import SignupPage from "../SignupPage/SignupPage";
 import LoginPage from "../LoginPage/LoginPage";
 import userService from "../../utils/userService";
-import AdmFlashcardPage from "../AdmFlashcardPage/AdmFlashcardPage";
+import AddFlashcardPage from "../AddFlashcardPage/AddFlashcardPage";
 import FlashcardListPage from "../FlashcardListPage/FlashcardListPage";
 import WelcomePage from "../WelcomePage/WelcomePage";
 import CategoriesPage from "../CategoriesPage/CategoriesPage";
@@ -98,7 +98,7 @@ class App extends Component {
                     flashcards={this.state.flashcards}
                     handleDeleteFlashcard={this.handleDeleteFlashcard}
                   />
-                  <AdmFlashcardPage
+                  <AddFlashcardPage
                     user={this.state.user}
                     handleAddFlashcard={this.handleAddFlashcard}
                     flashcards={this.state.flashcards}
